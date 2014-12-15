@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="css/onsenui.css">  
   <link rel="stylesheet" href="css/onsen-css-components-blue-basic-theme.css">  
   <link rel="stylesheet" href="css/app.css"/>
-
+  <script src="js/powerLiftChart.js"></script>
+  <script src="js/reps.js"></script>	
   <script src="js/angular/angular.js"></script>    
   <script src="js/onsenui.js"></script>    
-  <script src="js/reps.js"></script>
   <script src="cordova.js"></script>
 
   <script>
@@ -151,86 +151,58 @@
 		
 	  <section style="padding: 0 8px 8px;">
 		<p style="text-align: left" >Weight Lifted</p>
-        <input type="text" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
+        <input type="number" id="weightInput" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
       </section>
 		
 	  <section style="padding: 0 8px 8px;">
 		<p style="text-align: left" >Reps Completed</p>
-        <input type="text" class="text-input" ng-model="Reps" placeholder="Type here" style="display: block; width: 100%">
+        <input type="number" id="repInput" class="text-input" ng-model="Reps" placeholder="Type here" style="display: block; width: 100%">
       </section>
-		
-	  <section style="padding:0 10px 0px 8px;">
-		<p style="text-align: left" >Select Exersize</p>
-      </section>
-		
-		<ul class="list">
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item" >
-			  <input type="checkbox">
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Bench Press
-			</label>
-		  </li>
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item">
-			  <input type="checkbox" checked>
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Deadlift
-			</label>
-		  </li>
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item">
-			  <input type="checkbox" checked>
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Squat
-			</label>
-		  </li>
-		</ul>
 
     	<section style="padding: 10px 8px 10px 8px;">
-        <ons-button modifier="large">Submit</ons-button>
+        <ons-button modifier="large" onClick="calculateMax()">Submit</ons-button>
     	</section>
 		
-		<ons-list>
-			<ons-list-item class="center navigation-bar__title navigation-bar__center">
-			  <span style="color: #666">Estimated Max</span>
-			  256
-			</ons-list-item>
-		</ons-list>
+		<div id="hideUntilSubmitted" style="display:none;">
 		
-		<section style="padding:5px 8px 8px 8px;">
-        	<ons-button modifier="large light">save</ons-button>
-    	</section>
-		
-		<div id="Chart">
-			<section style="padding:5px 8px 8px 8px;">
-				<table id="miyazaki">
-					<thead>
-					<tr><th class="GraphTitle" >Reps<th class="GraphTitle">Rep Maxes
-					<tbody>
-					<tr>
-					<td data-th="Reps" class="GraphText">1
-					<td data-th="Year" class="GraphText">100
+			<ons-list>
+				<ons-list-item class="center navigation-bar__title navigation-bar__center">
+				  <span id="estimatedMax" style="color: #666"></span>
+				</ons-list-item>
+			</ons-list>
+			
+		</div>
 
-					<tr>
-					<td data-th="Reps" class="GraphText">2
-					<td data-th="Year" class="GraphText">95
-
-					<tr>
-					<td data-th="Reps" class="GraphText">3
-					<td data-th="Year" class="GraphText">90
-
-					<tr>
-					<td data-th="Reps" class="GraphText">4
-					<td data-th="Year" class="GraphText">88
+			<div id="Chart">
+				<section style="padding:5px 8px 8px 8px;">
+					<table id="miyazaki">
+						<thead>
+						<tr><th class="GraphTitle" >Reps<th id="1RMTitle" class="GraphTitle">Percentage
+						<tbody>
+						<tr>
+						<td data-th="Reps" class="GraphText">1
+						<td id="1RepMax" data-th="Year" class="GraphText">100</td>
 
 						<tr>
-					<td data-th="Reps" class="GraphText">5
-					<td data-th="Year" class="GraphText">86
+						<td data-th="Reps" class="GraphText">2
+						<td id="2RepMax" data-th="Year" class="GraphText">95</td>
 
-				</table>
-			</section>
-		</div>
+						<tr>
+						<td data-th="Reps" class="GraphText">3
+						<td  id="3RepMax" data-th="Year" class="GraphText">90</td>
+
+						<tr>
+						<td data-th="Reps" class="GraphText">4
+						<td id="4RepMax" data-th="Year" class="GraphText">88</td>
+
+							<tr>
+						<td data-th="Reps" class="GraphText">5
+						<td id="5RepMax" data-th="Year" class="GraphText">86</td>
+
+					</table>
+				</section>
+			</div>
+			
     </div>
 			
         </ons-col>
@@ -275,30 +247,76 @@
         <ons-col align="center">
          
 			<div style="text-align: center">
-		      <section style="padding: 0 8px 8px;">
-				<p style="text-align: left" >Body Weight</p>
-				<input type="text" class="text-input" ng-model="bodyWeight" placeholder="Type here" style="display: block; width: 100%">
-			  </section>
 				
 			  <section style="padding: 0 8px 8px;">
 				<p style="text-align: left" >Max Bench</p>
-				<input type="text" class="text-input" ng-model="bodyWeight" placeholder="Type here" style="display: block; width: 100%">
+				<input id="maxBench" type="number" class="text-input" ng-model="maxBench" placeholder="Type here" style="display: block; width: 100%">
 			  </section>
 
 			  <section style="padding: 0 8px 8px;">
 				<p style="text-align: left" >Max Deadlift</p>
-				<input type="text" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
+				<input id="maxDead" type="number" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
 			  </section>
 
 			  <section style="padding: 0 8px 8px;">
 				<p style="text-align: left" >Max Squat</p>
-				<input type="text" class="text-input" ng-model="Reps" placeholder="Type here" style="display: block; width: 100%">
+				<input id="maxSquat" type="number" class="text-input" ng-model="Reps" placeholder="Type here" style="display: block; width: 100%">
+			  </section>
+				
+			 <section style="padding: 0 8px 8px;">
+				<p style="text-align: left" >Body Weight*</p>
+				<input id="bodyWeight1" type="number" class="text-input" ng-model="bodyWeight" placeholder="Optional" style="display: block; width: 100%">
 			  </section>
 
 				<section style="padding:5px 8px 8px 8px;">
-				<ons-button style="width: 49%;" modifier="">Submit</ons-button>
-				<ons-button style="width: 49%;" modifier="">Get Saved Lifts</ons-button>
+				<ons-button style="width: 49%;" modifier="" onclick="powerLiftingTotal()">Submit</ons-button>
+				<ons-button style="width: 49%;" modifier="" disabled="true">Get Saved Lifts</ons-button>
 				</section>
+				
+				<div id="hideUntilSubmitted1" style="display:none;">
+		
+					<ons-list>
+						<ons-list-item class="center navigation-bar__title navigation-bar__center">
+						  <span id="PowerLifingTotals" style="color: #666"></span>
+						</ons-list-item>
+					</ons-list>
+					
+					<div id="hideUntilSubmitted2" style="display:none;">
+						<div id="Chart">
+							<section style="padding:5px 8px 8px 8px;">
+								<table id="miyazaki">
+									<thead>
+									<tr><th class="GraphTitle" >Class<th class="GraphTitle">Totals (Body Weight)
+									<tbody>
+									<tr>
+									<td id="eliteScore1" data-th="Reps" class="GraphText">Elite 
+									<td id="eliteScore" data-th="Year" class="GraphText">1374</td>
+
+									<tr>
+									<td id="masterScore1" data-th="Reps" class="GraphText">Master 
+									<td id="masterScore" data-th="Year" class="GraphText">1260</td>
+
+									<tr>
+									<td id="class1Score1" data-th="Reps" class="GraphText">Class I
+									<td  id="class1Score" data-th="Year" class="GraphText">1131</td>
+
+									<tr>
+									<td id="class2Score1" data-th="Reps" class="GraphText">Class II
+									<td id="class2Score" data-th="Year" class="GraphText">992</td>
+
+									<tr>
+									<td id="class3Score1" data-th="Reps" class="GraphText">Class III
+									<td id="class3Score" data-th="Year" class="GraphText">869</td>
+
+									<tr>
+									<td id="class4Score1" data-th="Reps" class="GraphText">Class IV
+									<td  id="class4Score" data-th="Year" class="GraphText">754</td>
+
+								</table>
+							</section>
+						</div>
+					</div>
+				</div>
 
 			</div>
 			
@@ -324,6 +342,47 @@
       <ons-row style="margin-top: 10px;">
         <ons-col align="center">
          
+		<section style="padding:0 10px 0px 8px;">
+			<p style="text-align: left" >Add New Record</p>
+      	</section>	
+			
+		<section style="padding: 0 8px 8px;">
+		<p style="text-align: left" >Weight Lifted</p>
+        <input type="number" id="weightInput" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
+      </section>
+			
+		<section style="padding:0 10px 0px 8px;">
+			<p style="text-align: left" >Select Exersize</p>
+      	</section>
+			
+			<ul class="list">
+		  <li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item" >
+			  <input id="benchBox" name="a" type="checkbox" onclick="checkBoxClicked('benchBox')" checked>
+			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+			  Bench Press
+			</label>
+		  </li>
+		  <li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+			  <input id="deadBox" name="a" type="checkbox" onclick="checkBoxClicked('deadBox')">
+			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+			  Deadlift
+			</label>
+		  </li>
+		  <li class="list__item list__item--tappable">
+			<label class="checkbox checkbox--list-item">
+			  <input id="squatBox" name="a" type="checkbox" onclick="checkBoxClicked('squatBox')">
+			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+			  Squat
+			</label>
+		  </li>
+		</ul>
+			
+		<section style="padding:5px 8px 8px 8px;">
+			<ons-button style="width: 100%;" modifier="light large">Save</ons-button>
+		</section>
+			
         </ons-col>
       </ons-row>
 

@@ -35,6 +35,7 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/img \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/index.html \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/Untitled-1.html \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/css/app.css \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/css/ionicons \
@@ -52,7 +53,10 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/img/Untitled-1 \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/onsenui.js \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/powerLiftChart.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/reps.js \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/Untitled-2 \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/Untitled-2.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular-animate.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular-csp.css \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular.js \
@@ -60,4 +64,7 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular.min.js.gzip \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular.min.js.map \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/bower.json \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer/www \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/AndroidManifest.xml \
