@@ -9,4 +9,5 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/classes/de/appplant/cordova/emailcomposer/EmailComposer$1.class \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/classes/de/appplant/cordova/emailcomposer/EmailComposer$2.class \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/classes/de/appplant/cordova/emailcomposer/EmailComposer.class \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/classes/org/apache/cordova/splashscreen/SplashScreen.class \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/dexedLibs/classes-d789e15a49570c45eb22f80970d896f2.jar \

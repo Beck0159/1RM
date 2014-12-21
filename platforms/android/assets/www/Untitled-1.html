@@ -24,6 +24,7 @@
                 <label class="radio-button">
                   <input type="radio" name="level" ng-model="selectedLevel">
                   <div class="radio-button__checkmark"></div>
+					<ons-list-item class="list__item ons-list-item-inner" id="bench"+i+"" onclick="benchPressed(this.id)">'+storageArray[i]+'</ons-list-item>
                   Male
                 </label>
 
@@ -61,5 +62,103 @@
 
     </ons-page>
   </ons-navigator>
+
+
+
+<ons-page>
+  <ons-toolbar>
+    <div class="center">Dialog</div>
+  </ons-toolbar>
+  <ons-list ng-controller="DialogController">
+   <ons-list-item ng-click="show('login.html')" modifier="tappable">
+     Login form
+   </ons-list-item>
+   <ons-list-item ng-click="show('navigator.html')" modifier="tappable">
+     Navigator
+   </ons-list-item>
+   <ons-list-item ng-click="show('list.html')" modifier="tappable">
+     List
+   </ons-list-item>
+  </ons-list>
+</ons-page>
+  
+<ons-template id="navigator.html">
+  <ons-dialog style="height: 160px;" var="naviDialog" cancelable>
+
+    <ons-navigator var="myNav">
+      <ons-toolbar inline>
+        <div class="center">
+          Navigator
+        </div>
+      </ons-toolbar>
+    
+      <div style="text-align: center">
+        <p>
+          This is a dialog with a navigator.
+        </p>
+        
+        <p>
+          <ons-button onclick="naviDialog.hide()">Close</ons-button>
+          <ons-button onclick="myNav.pushPage('next.html')">Next</ons-button>
+        </p>
+      </div>
+    </ons-navigator>
+  </ons-dialog>        
+</ons-template>
+
+<ons-template id="login.html">
+  <ons-dialog var="dialog" cancelable>
+
+      <ons-toolbar inline>
+        <div class="center">
+          Login
+        </div>
+      </ons-toolbar>
+    
+      <p>
+        <input placeholder="Username" id="username" class="text-input">
+      </p>
+    
+      <p>
+        <input type="password" placeholder="Password" id="username" class="text-input">
+      </p>
+    
+      <p>
+        <ons-button modifier="large" ng-click="dialog.hide()">Sign in</ons-button>
+      </p>
+
+  </ons-dialog> 
+</ons-template>
+
+<ons-template id="list.html">
+  <ons-dialog var="dialog" cancelable>
+
+    <ons-list>
+      <ons-list-item modifier="tappable">
+        Foo
+      </ons-list-item>
+      <ons-list-item modifier="tappable">
+        Bar
+      </ons-list-item>
+      <ons-list-item modifier="tappable">
+        Hoge
+      </ons-list-item>
+    </ons-list>
+
+  </ons-dialog> 
+</ons-template>
+
+<ons-template id="next.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">Page 2</div>
+    </ons-toolbar>
+    
+    <p style="text-align: center;">
+      <ons-button onclick="myNav.popPage()">Back</ons-button>
+    </p>
+  </ons-page>
+</ons-template>
+
         
         

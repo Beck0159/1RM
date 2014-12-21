@@ -243,3 +243,229 @@ var male = {
 							
         }]      
 }
+
+
+
+var female = {
+        "weightClasses": [{
+            	"name": "97",
+				"classes": [{
+					"id": "Class IV",
+					"score": 347
+				}, {
+					"id": "Class III",
+					"score": 402
+				},{	
+					"id": "Class II",
+					"score": 463
+				},{	
+					"id": "Class I",
+					"score": 518  
+				},{	
+					"id": "Master",
+					"score": 579   
+				},{	
+					"id": "Elite ",
+					"score": 639    
+				}]
+							
+        }, {
+            "name": "105",
+				"classes": [{
+					"id": "Class IV",
+					"score": 375
+				}, {
+					"id": "Class III",
+					"score": 435
+				},{	
+					"id": "Class II",
+					"score": 496 
+				},{	
+					"id": "Class I",
+					"score": 562  
+				},{	
+					"id": "Master",
+					"score": 623   
+				},{	
+					"id": "Elite ",
+					"score": 683    
+				}]
+							
+        }, {
+            "name": "114",
+				"classes": [{
+					"id": "Class IV",
+					"score": 402
+				}, {
+					"id": "Class III",
+					"score": 468
+				},{	
+					"id": "Class II",
+					"score": 535 
+				},{	
+					"id": "Class I",
+					"score": 601  
+				},{	
+					"id": "Master",
+					"score": 667   
+				},{	
+					"id": "Elite ",
+					"score": 733    
+				}]
+							
+        }, {
+            "name": "123",
+				"classes": [{
+					"id": "Class IV",
+					"score": 424
+				}, {
+					"id": "Class III",
+					"score": 496
+				},{	
+					"id": "Class II",
+					"score": 568 
+				},{	
+					"id": "Class I",
+					"score": 639  
+				},{	
+					"id": "Master",
+					"score": 711   
+				},{	
+					"id": "Elite ",
+					"score": 782    
+				}]
+							
+        }, {
+            "name": "132",
+				"classes": [{
+					"id": "Class IV",
+					"score": 452
+				}, {
+					"id": "Class III",
+					"score": 524
+				},{	
+					"id": "Class II",
+					"score": 601 
+				},{	
+					"id": "Class I",
+					"score": 762  
+				},{	
+					"id": "Master",
+					"score": 749   
+				},{	
+					"id": "Elite ",
+					"score": 827    
+				}]
+							
+        }, {
+            "name": "148",
+				"classes": [{
+					"id": "Class IV",
+					"score": 496
+				}, {
+					"id": "Class III",
+					"score": 579
+				},{	
+					"id": "Class II",
+					"score": 661 
+				},{	
+					"id": "Class I",
+					"score": 744  
+				},{	
+					"id": "Master",
+					"score": 827   
+				},{	
+					"id": "Elite ",
+					"score": 909    
+				}]
+							
+        }, {
+            "name": "165",
+				"classes": [{
+					"id": "Class IV",
+					"score": 535
+				}, {
+					"id": "Class III",
+					"score": 623
+				},{	
+					"id": "Class II",
+					"score": 706 
+				},{	
+					"id": "Class I",
+					"score": 805  
+				},{	
+					"id": "Master",
+					"score": 893   
+				},{	
+					"id": "Elite ",
+					"score": 981    
+				}]
+							
+        }, {
+            "name": "181",
+				"classes": [{
+					"id": "Class IV",
+					"score": 573
+				}, {
+					"id": "Class III",
+					"score": 672
+				},{	
+					"id": "Class II",
+					"score": 766 
+				},{	
+					"id": "Class I",
+					"score": 865  
+				},{	
+					"id": "Master",
+					"score": 959   
+				},{	
+					"id": "Elite ",
+					"score": 1053    
+				}]
+							
+        }, {
+            "name": "198",
+				"classes": [{
+					"id": "Class IV",
+					"score": 617
+				}, {
+					"id": "Class III",
+					"score": 706
+				},{	
+					"id": "Class II",
+					"score": 821 
+				},{	
+					"id": "Class I",
+					"score": 920  
+				},{	
+					"id": "Master",
+					"score": 1025   
+				},{	
+					"id": "Elite ",
+					"score": 1130    
+				}]
+							
+        }, {
+            "name": "220",
+				"classes": [{
+					"id": "Class IV",
+					"score": 650
+				}, {
+					"id": "Class III",
+					"score": 755
+				},{	
+					"id": "Class II",
+					"score": 865 
+				},{	
+					"id": "Class I",
+					"score": 970  
+				},{	
+					"id": "Master",
+					"score": 1080   
+				},{	
+					"id": "Elite ",
+					"score": 1190    
+				}]
+							
+        }]      
+}

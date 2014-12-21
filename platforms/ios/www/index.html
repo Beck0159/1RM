@@ -103,12 +103,12 @@
          
           Wilks Score
         </ons-list-item>
-		<ons-list-item class="menu-item" ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
+		<ons-list-item class="menu-item" ng-click="menu.setMainPage('page3.html', {closeMenu: true})" onclick="totalsPage()">
          
           Power Lifting Total
         </ons-list-item>
 		<ons-list-header>Acheivments</ons-list-header>
-        <ons-list-item class="menu-item" ng-click="menu.setMainPage('page4.html', {closeMenu: true})">
+        <ons-list-item class="menu-item" ng-click="menu.setMainPage('page4.html', {closeMenu: true})" onclick="prPage()">
           
           Personal Records
         </ons-list-item>
@@ -118,15 +118,12 @@
       <br>
 
       <ons-list class="bottom-menu-list">
-        <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-          Donate
-        </ons-list-item>
 
         <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page5.html', {closeMenu: true})">
           Help
         </ons-list-item>
 
-        <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
+        <ons-list-item class="bottom-menu-item" onClick="sendEmail()">
           Send feedback
         </ons-list-item>
       </ons-list>
@@ -141,7 +138,12 @@
             <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
           </ons-toolbar-button>
         </div>
-        <div class="center">One Rep Max</div>
+        <div class="center">  
+			One Rep Max
+		</div>
+		<div class="right">  
+			<img src="img/LiftCalculator.png" width="28px" style="margin: 8px;">
+		</div>
       </ons-toolbar>
 
       <ons-row style="">
@@ -151,12 +153,12 @@
 		
 	  <section style="padding: 0 8px 8px;">
 		<p style="text-align: left" >Weight Lifted</p>
-        <input type="number" id="weightInput" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
+        <input type="number" id="weightInput" class="text-input" ng-model="weightLifted" placeholder="Enter Weight" style="display: block; width: 100%">
       </section>
 		
 	  <section style="padding: 0 8px 8px;">
 		<p style="text-align: left" >Reps Completed</p>
-        <input type="number" id="repInput" class="text-input" ng-model="Reps" placeholder="Type here" style="display: block; width: 100%">
+        <input type="number" id="repInput" class="text-input" ng-model="Reps" placeholder="Enter Reps" style="display: block; width: 100%">
       </section>
 
     	<section style="padding: 10px 8px 10px 8px;">
@@ -181,23 +183,23 @@
 						<tbody>
 						<tr>
 						<td data-th="Reps" class="GraphText">1
-						<td id="1RepMax" data-th="Year" class="GraphText">100</td>
+						<td id="1RepMax" data-th="Year" class="GraphText">100%</td>
 
 						<tr>
 						<td data-th="Reps" class="GraphText">2
-						<td id="2RepMax" data-th="Year" class="GraphText">95</td>
+						<td id="2RepMax" data-th="Year" class="GraphText">95%</td>
 
 						<tr>
 						<td data-th="Reps" class="GraphText">3
-						<td  id="3RepMax" data-th="Year" class="GraphText">90</td>
+						<td  id="3RepMax" data-th="Year" class="GraphText">90%</td>
 
 						<tr>
 						<td data-th="Reps" class="GraphText">4
-						<td id="4RepMax" data-th="Year" class="GraphText">88</td>
+						<td id="4RepMax" data-th="Year" class="GraphText">88%</td>
 
 							<tr>
 						<td data-th="Reps" class="GraphText">5
-						<td id="5RepMax" data-th="Year" class="GraphText">86</td>
+						<td id="5RepMax" data-th="Year" class="GraphText">86%</td>
 
 					</table>
 				</section>
@@ -219,6 +221,9 @@
           </ons-toolbar-button>
         </div>
         <div class="center">Wilks Score</div>
+		<div class="right">  
+			<img src="img/LiftCalculator.png" width="28px" style="margin: 8px;">
+		</div>
       </ons-toolbar>
 
 
@@ -240,6 +245,9 @@
           </ons-toolbar-button>
         </div>
         <div class="center">Power Lifting Totals</div>
+		<div class="right">  
+			<img src="img/LiftCalculator.png" width="28px" style="margin: 8px;">
+		</div>
       </ons-toolbar>
 
 
@@ -267,10 +275,27 @@
 				<p style="text-align: left" >Body Weight*</p>
 				<input id="bodyWeight1" type="number" class="text-input" ng-model="bodyWeight" placeholder="Optional" style="display: block; width: 100%">
 			  </section>
+				
+			<ul class="list">
+			  <li class="list__item list__item--tappable">
+				<label class="checkbox checkbox--list-item" >
+				  <input id="benchBox" name="a" type="checkbox" onclick="checkBoxClicked('benchBox')" checked>
+				  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				  Male
+				</label>
+			  </li>
+			  <li class="list__item list__item--tappable">
+				<label class="checkbox checkbox--list-item">
+				  <input id="deadBox" name="a" type="checkbox" onclick="checkBoxClicked('deadBox')">
+				  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				  Female
+				</label>
+			  </li>
+			</ul>
 
 				<section style="padding:5px 8px 8px 8px;">
 				<ons-button style="width: 49%;" modifier="" onclick="powerLiftingTotal()">Submit</ons-button>
-				<ons-button style="width: 49%;" modifier="" disabled="true">Get Saved Lifts</ons-button>
+				<ons-button id="getSaved" style="width: 49%;" onclick="getSavedLifts()">Get Saved Lifts</ons-button>
 				</section>
 				
 				<div id="hideUntilSubmitted1" style="display:none;">
@@ -286,7 +311,7 @@
 							<section style="padding:5px 8px 8px 8px;">
 								<table id="miyazaki">
 									<thead>
-									<tr><th class="GraphTitle" >Class<th class="GraphTitle">Totals (Body Weight)
+									<tr><th class="GraphTitle" >Class<th class="GraphTitle">Totals <ons-icon id="helpBTN" icon="ion-ios7-help" size="30px" fixed-width="true" onclick="chartHelp()"></ons-icon>
 									<tbody>
 									<tr>
 									<td id="eliteScore1" data-th="Reps" class="GraphText">Elite 
@@ -336,59 +361,127 @@
           </ons-toolbar-button>
         </div>
         <div class="center">Personal Records</div>
+		<div class="right">  
+			<img src="img/LiftCalculator.png" width="28px" style="margin: 8px;">
+		</div>
       </ons-toolbar>
 
 
-      <ons-row style="margin-top: 10px;">
-        <ons-col align="center">
+      <ons-row style="">
+        <ons-col  align="center">
          
-		<section style="padding:0 10px 0px 8px;">
-			<p style="text-align: left" >Add New Record</p>
-      	</section>	
+			<section id="addRecord" style="padding:10px 8px 10px 8px;">
+				<ons-button style="width: 100%;" modifier="light" onclick="addPR()">Add New PR</ons-button>
+			</section>	
 			
-		<section style="padding: 0 8px 8px;">
-		<p style="text-align: left" >Weight Lifted</p>
-        <input type="number" id="weightInput" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
-      </section>
+		
+			 
+		<div id="addRecordInvisable" style="display: none;"> 
+			<section style="padding: 0 8px 8px;">
+			<p style="text-align: left" >Weight Lifted</p>
+			<input type="number" id="weightInput1" class="text-input" ng-model="weightLifted" placeholder="Type here" style="display: block; width: 100%">
+		  </section>
+
+			<section style="padding:0 10px 0px 8px;">
+				<p style="text-align: left" >Select Exersize</p>
+			</section>
+
+				<ul class="list">
+			  <li class="list__item list__item--tappable">
+				<label class="checkbox checkbox--list-item" >
+				  <input id="benchBox" name="a" type="checkbox" onclick="checkBoxClicked('benchBox')" checked>
+				  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				  Bench Press
+				</label>
+			  </li>
+			  <li class="list__item list__item--tappable">
+				<label class="checkbox checkbox--list-item">
+				  <input id="deadBox" name="a" type="checkbox" onclick="checkBoxClicked('deadBox')">
+				  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				  Deadlift
+				</label>
+			  </li>
+			  <li class="list__item list__item--tappable">
+				<label class="checkbox checkbox--list-item">
+				  <input id="squatBox" name="a" type="checkbox" onclick="checkBoxClicked('squatBox')">
+				  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
+				  Squat
+				</label>
+			  </li>
+			</ul>
+
+			<section style="padding:10px 8px 10px 8px;">
+				<ons-button id="savePR" style="width: 100%;" modifier="large" onclick="savePR()">Save</ons-button>
+			</section>
+		
+		</div>
 			
-		<section style="padding:0 10px 0px 8px;">
-			<p style="text-align: left" >Select Exersize</p>
-      	</section>
+		
+		<ons-list id="BenchList">
+		  <ons-list-header>Bench</ons-list-header>
+		  <ons-list-item>No Saved Lifts</ons-list-item>
+		</ons-list>
 			
-			<ul class="list">
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item" >
-			  <input id="benchBox" name="a" type="checkbox" onclick="checkBoxClicked('benchBox')" checked>
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Bench Press
-			</label>
-		  </li>
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item">
-			  <input id="deadBox" name="a" type="checkbox" onclick="checkBoxClicked('deadBox')">
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Deadlift
-			</label>
-		  </li>
-		  <li class="list__item list__item--tappable">
-			<label class="checkbox checkbox--list-item">
-			  <input id="squatBox" name="a" type="checkbox" onclick="checkBoxClicked('squatBox')">
-			  <div class="checkbox__checkmark checkbox--list-item__checkmark"></div>
-			  Squat
-			</label>
-		  </li>
-		</ul>
+		<ons-list id="DeadList">
+		  <ons-list-header>Deadlift</ons-list-header>
+		  <ons-list-item>No Saved Lifts</ons-list-item>
+		</ons-list>
 			
-		<section style="padding:5px 8px 8px 8px;">
-			<ons-button style="width: 100%;" modifier="light large">Save</ons-button>
-		</section>
-			
+		<ons-list id="SquatList">
+		  <ons-list-header>Squat</ons-list-header>
+		  <ons-list-item>No Saved Lifts</ons-list-item>
+		</ons-list>
+
         </ons-col>
       </ons-row>
-
+		
     </ons-page>
   </ons-template>
 	
+  <ons-template id="benchDialog.html">
+	  <ons-dialog var="dialog" cancelable>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large" class="button--red" onclick="deleteBench()">Delete</ons-button>
+		  </section>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large light"  onclick="dialog.hide();">Cancel</ons-button>
+		  </section>
+
+	  </ons-dialog> 
+</ons-template>
+		  
+	<ons-template id="deadDialog.html">
+	  <ons-dialog var="dialog" cancelable>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large" class="button--red" onclick="deleteDead()">Delete</ons-button>
+		  </section>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large light"  onclick="dialog.hide();">Cancel</ons-button>
+		  </section>
+
+	  </ons-dialog> 
+</ons-template>
+		  
+	<ons-template id="squatDialog.html">
+	  <ons-dialog var="dialog" cancelable>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large" class="button--red" onclick="deleteSquat()">Delete</ons-button>
+		  </section>
+		  
+		  <section style="padding:10px 8px 10px 8px;">
+			  <ons-button id="" style="width: 100%;" modifier="large light"  onclick="dialog.hide();">Cancel</ons-button>
+		  </section>
+
+	  </ons-dialog> 
+</ons-template>
+		  
+		  
+		  
 	<ons-template id="page5.html">
     <ons-page>
       <ons-toolbar>
@@ -398,6 +491,9 @@
           </ons-toolbar-button>
         </div>
         <div class="center">Help</div>
+		<div class="right">  
+			<img src="img/LiftCalculator.png" width="28px" style="margin: 8px;">
+		</div>
       </ons-toolbar>
 
 
@@ -409,6 +505,21 @@
 
     </ons-page>
   </ons-template>
+		  
+  <ons-template id="help.html">
+  <ons-popover 
+  style="height: 200px; width: 200px" 
+  animation="fade" modifier="simple" cancelable>
+      <ons-page>
+        <div style="text-align: center; opacity: 0.5;">
+      <p>Power Lifting Chart</p>
+      <p><small>The chart represents what class best suits you, based on your weight.</small></p>
+	
+    </div>
+    
+      </ons-page>
+  </ons-popover>
+</ons-template>
  
 </body>
 </html>
