@@ -4,8 +4,92 @@
         "uninstalled": []
     },
     "config_munge": {
-        "files": {}
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.emailcomposer.EmailComposer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.AdMob\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBillingPlugin\"><param name=\"android-package\" value=\"com.smartmobilesoftware.inappbilling.InAppBillingPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest/application": [
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/values/billing_key_param.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<string name=\"billing_key_param\">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkLHWCAkQPOYE9MaCNLZKi00oe3Q/szJLYQfXb854GERw8T90S0OLDRRg2x1q7Veh/pgF2Q/dl4TNz1cgVCbmArpBEP1dyzUzSlw8oYlAbaDkFLhXB5RhTLTqcLsA/a9hzXUX96htBqoBxFskkymoJse8LBHNgEah63J5l/1/307XJxCWiZXoB7HFVYcQflpwfWs0hS62oE+AJm5265KtFMU547FI5iSdn+49n0arYIISxAeNv+N929yx2J4g3d0UA5uaAiw2t8lzudYtJLe42isu1H3vsBUrHTlevibNnk+c/TXZ6oX+Sz9qI837NXcWxYq/Wfe1IAa2tJ9sNJ1cNQIDAQAB</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
     },
-    "installed_plugins": {},
-    "dependent_plugins": {}
+    "installed_plugins": {
+        "de.appplant.cordova.plugin.email-composer": {
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        },
+        "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        },
+        "com.rjfun.cordova.plugin.admob": {
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        },
+        "com.smartmobilesoftware.androidinappbilling": {
+            "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkLHWCAkQPOYE9MaCNLZKi00oe3Q/szJLYQfXb854GERw8T90S0OLDRRg2x1q7Veh/pgF2Q/dl4TNz1cgVCbmArpBEP1dyzUzSlw8oYlAbaDkFLhXB5RhTLTqcLsA/a9hzXUX96htBqoBxFskkymoJse8LBHNgEah63J5l/1/307XJxCWiZXoB7HFVYcQflpwfWs0hS62oE+AJm5265KtFMU547FI5iSdn+49n0arYIISxAeNv+N929yx2J4g3d0UA5uaAiw2t8lzudYtJLe42isu1H3vsBUrHTlevibNnk+c/TXZ6oX+Sz9qI837NXcWxYq/Wfe1IAa2tJ9sNJ1cNQIDAQAB",
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        }
+    },
+    "dependent_plugins": {
+        "com.google.playservices": {
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        },
+        "com.google.admobsdk": {
+            "PACKAGE_NAME": "com.beck0159.repCalculator"
+        }
+    }
 }

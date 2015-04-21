@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7125F275-C36B-40E5-AD67-2853A8FE2859</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RepCalculator</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>61D8D92633F9A0B9EF4ABBB7537825E1F481FE97</key>
+		<string>https://github.com/Beck0159/1RM.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/RepCalculator.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>61D8D92633F9A0B9EF4ABBB7537825E1F481FE97</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Beck0159/1RM.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>61D8D92633F9A0B9EF4ABBB7537825E1F481FE97</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>61D8D92633F9A0B9EF4ABBB7537825E1F481FE97</string>
+			<key>IDESourceControlWCCName</key>
+			<string>repCalculator</string>
+		</dict>
+	</array>
+</dict>
+</plist>

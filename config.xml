@@ -1,12 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.beck0159.repCalculator" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>RepCalculator</name>
+<widget id="com.beck0159.repCalculator" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Lift Calculator</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A application to calculate one rep maxes and more.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="connorbecker@yahoo.ca" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="1000" />
     <content src="index.html" />
     <access origin="*" />
 </widget>
