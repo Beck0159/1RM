@@ -14,7 +14,9 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/drawable-xhdpi/icon.png \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/drawable-xxhdpi/icon.png \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/drawable-xxxhdpi/icon.png \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/values/billing_key_param.xml \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/values/strings.xml \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/values/version.xml \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/res/xml/config.xml \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/res/drawable/icon.png \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/ant-build/res/drawable-hdpi/icon.png \
@@ -71,8 +73,14 @@
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular.min.js.gzip \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/angular.min.js.map \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/js/angular/bower.json \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.rjfun.cordova.plugin.admob \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.smartmobilesoftware.androidinappbilling \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.rjfun.cordova.plugin.admob/www \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.rjfun.cordova.plugin.admob/www/AdMob.js \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.smartmobilesoftware.androidinappbilling/www \
+/Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/com.smartmobilesoftware.androidinappbilling/www/inappbilling.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer/www \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js \
 /Users/connorbecker/Documents/apps/repCalculator/platforms/android/assets/www/plugins/org.apache.cordova.splashscreen/www \

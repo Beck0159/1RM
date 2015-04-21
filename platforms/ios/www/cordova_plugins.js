@@ -14,13 +14,23 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/com.rjfun.cordova.plugin.admob/www/AdMob.js",
+        "id": "com.rjfun.cordova.plugin.admob.AdMob",
+        "clobbers": [
+            "window.plugins.AdMob"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "de.appplant.cordova.plugin.email-composer": "0.8.2dev",
-    "org.apache.cordova.splashscreen": "0.3.5"
+    "org.apache.cordova.splashscreen": "0.3.5",
+    "com.rjfun.cordova.plugin.admob": "2.1.7",
+    "com.smartmobilesoftware.androidinappbilling": "3.0.2",
+    "com.google.admobsdk": "6.12.2"
 }
 // BOTTOM OF METADATA
 });

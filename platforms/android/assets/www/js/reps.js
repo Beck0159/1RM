@@ -13,6 +13,31 @@ function onDeviceReady() {
     // Now safe to use device APIs
 	console.log("Device Ready!!");	
 	
+	
+	if(window.plugins && window.plugins.AdMob) {
+                var admob_key = "ca-app-pub-8065941846322433/8124268709";
+                var admob = window.plugins.AdMob;
+                admob.createBannerView( 
+                    {
+                        'publisherId': admob_key,
+                        'adSize': admob.AD_SIZE.BANNER,
+                        'bannerAtTop': false
+                    }, 
+                    function() {
+                        admob.requestAd(
+                            { 'isTesting': false }, 
+                            function() {
+                                admob.showAd(true);
+                            }, 
+                            function() { console.log('failed to request ad'); }
+                        );
+                    }, 
+                    function() { console.log('failed to create banner view'); }
+                );
+       }
+	
+	
+	
 }
 
 function checkBoxClicked(checkboxID){
@@ -786,8 +811,6 @@ function chartHelp(){
 });
 	
 }
-
-
 
 
 
